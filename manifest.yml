@@ -1,0 +1,13 @@
+---
+applications:
+# -------------------------------------------------------------------
+# Backend service
+# -------------------------------------------------------------------
+- name: hanaapieventmesh-srv
+  random-route: true
+  path: .
+  buildpack: nodejs_buildpack
+  services:
+    - hanapi
+    - eventmesh
+  command: node server.js
